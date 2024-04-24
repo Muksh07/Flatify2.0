@@ -1,0 +1,21 @@
+.logo-container
+{
+   height: 40px;
+   width: 200px;
+}
+#logo
+{
+   height: 45px;
+   width: 150px;
+}
+.navbar
+{
+    background-color: chocolate;
+}
+nav a {
+   cursor: pointer;
+}
+.active{
+   border-bottom: 2px solid blueviolet;
+   transform: scale(1); 
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "id":1,
+    "sellrent":1,
+    "Name":"Ankit House",
+    "type":"House",
+    "price":"20000",
+    "image":"prop1.jpg"
+    },
+    {
+      "id":2,
+      "sellrent":2,
+      "Name":"Abhishek House",
+      "type":"House",
+      "price":"30000",
+      "image":"prop2.jpg"
+    },
+    {
+      "id":3,
+      "sellrent":1,
+      "Name":"MedalleO",
+      "type":"Society",
+      "price":"40000",
+      "image":"prop3.jpg"
+    },
+    {
+      "id":4,
+      "sellrent":1,
+      "Name":"Eco Citi",
+      "type":"Society",
+      "price":"50000",
+      "image":"prop4.jpg"
+    },
+    {
+      "id":5,
+      "sellrent":1,
+      "Name":"Paras Tierea",
+      "type":"Society",
+      "price":"60000",
+      "image":"prop5.jpg"
+    },
+    {
+      "id":6,
+      "sellrent":1,
+      "Name":"Muk",
+      "type":"house",
+      "price":"76000"
+    }
+]

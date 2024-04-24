@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-dark ">
+  <div class="container-fluid">
+    <div class = "logo-container">
+      <a routerLink="/"><img id="logo" src="assets/Images/logo.png" alt="logo image"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" aria-current="page" routerLink="/">Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLinkActive="active" routerLink="/rent-property">Rent</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLinkActive="active" routerLink="/add-property">List Property (Free)</a>
+        </li>
+      </ul>
+      <div>
+        <ul class="nav navbar-nav">
+          <li *ngIf="!loggedin()" class="nav-item">
+            <a class="nav-link text-white" 
+            routerLinkActive="active" routerLink="/user-register" >Register</a>
+          </li>
+          <li *ngIf="!loggedin()" class="nav-item">
+            <a class="nav-link text-white"
+            routerLinkActive="active" routerLink="/user-login">Login</a>
+          </li>
+          <!-- <li *ngIf="loggedin()" class="nav-item">
+            <a class="nav-link text-white" (click)="Onlogout()">Logout</a>
+          </li> -->
+          <div *ngIf="loggedin()" class="dropdown m-2">
+              <a class="dropdown-toggle text-white ml-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome {{loggedinuser}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-gauge-high"></i> View Dashboard</a></li>
+                <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-user"></i> My Profile</a></li>
+                <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-key"></i> Change Password</a></li>
+                <li><a class="dropdown-item" (click)="Onlogout()">
+                  <i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+              </ul>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- <div *ngIf="loggedin()" class="dropdown m-5" dropdown>
+            <a href="#" class="dropdown-toggle test-light" dropdownToggle (click)="false"> 
+              Welcome {{loggedinuser}}
+            </a>
+            <div class="dropdown-menu" *dropdownMenu>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-tachometer-alt"></i> View Dashboard </a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-user-circle"></i>My Profile</a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-key"></i>Change Password</a>
+              <a (click)="Onlogout()" class="dropdown-item">
+                <i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+          </div> -->
