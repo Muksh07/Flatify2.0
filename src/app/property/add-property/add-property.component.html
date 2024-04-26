@@ -2,9 +2,11 @@
   add-property works!
   <button (click)="onBack()"  class="btn btn-primary">Back</button>
 </p> -->
-<div class="card">
+<div class="row m-5">
+  <div class="col-8">
+    <div class="card">
   <div class="card-header">
-     List Your Property
+     <h3>List Your Property</h3>
   </div>
   <div class="card-body">
       <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
@@ -32,7 +34,7 @@
               </div>
               <div class="form-group col-12 m-1">
                 <p>Property Type</p>
-                <div class="btn-group" btnRadioGroup>
+                <div class="btn-group" btnRadioGroup name='Type' [(ngModel)]="propertyView.Type">
                   <label  
                   *ngFor="let type of propertytypes" 
                   class="btn btn-outline-primary" 
@@ -50,7 +52,8 @@
               </div>
               <div class="form-group col-12">
                 <label for="Name">In Building/Society/Area</label>
-                <input type="text" class="form-control" #propname="ngModel" ngModel name = "Name" required>
+                <input type="text" class="form-control" #propname="ngModel" ngModel name = "Name" required
+                [(ngModel)]="propertyView.Name">
                 <span *ngIf="!propname.valid && propname.touched" class="error-block">
                    Please Enter Name
                 </span>
@@ -70,7 +73,8 @@
             <tab heading="Pricing and Area">
               <div class="form-group col-12">
                 <label>Price (in USD)</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name = "Price"
+                [(ngModel)]="propertyView.Price">
               </div>
               <div class="form-group col-12">
                 <label>Security (in USD)</label>
@@ -186,5 +190,15 @@
           </tabset>
         </div>
       </form>
+  </div>
+  </div>
+  </div>
+  <div class="col-4">
+    <div class="card-header text-center">
+      <h3>Your Property Preview</h3>
+    </div>
+    <div>
+      <app-property-card [property]="propertyView" [hiddenIcons]="true"></app-property-card>
+    </div>
   </div>
 </div>

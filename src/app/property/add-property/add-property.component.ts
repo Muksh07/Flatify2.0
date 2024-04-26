@@ -1,15 +1,17 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsModule, TabsetComponent } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { PropertyCardComponent } from '../property-card/property-card/property-card.component';
+import { Iproperty } from '../Iproperty';
 
 
 @Component({
   selector: 'app-add-property',
   standalone:true,
-  imports:[FormsModule,NgIf,TabsModule,ButtonsModule,NgFor], 
+  imports:[FormsModule,NgIf,TabsModule,ButtonsModule,NgFor,PropertyCardComponent], 
   templateUrl: './add-property.component.html',
   styleUrls: ['./add-property.component.css']
 })
@@ -18,6 +20,15 @@ export class AddPropertyComponent implements OnInit
   propertytypes: Array<string> = ["House","Appartment","Duplex"];
   furnishedtypes: Array<string> = ["Fully","Semi","Unfurnished"];
   @ViewChild('tabset') tabset?: TabsetComponent
+  propertyView: Iproperty = 
+  {
+    Id : null,
+    Name:'',
+    Price:null,
+    sellrent:null,
+    Type:null,
+    image: null
+  };
 
   constructor(private myrouter:Router) 
   { 
@@ -32,7 +43,7 @@ export class AddPropertyComponent implements OnInit
   {
     this.myrouter.navigate(['/']);
   }
-  OnSubmit(myForm:any)
+  OnSubmit(myForm:NgForm)
   {
     console.log(myForm);
   }

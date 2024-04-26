@@ -1,9 +1,9 @@
 export interface Iproperty 
 {
-    Id : number;
-    sellrent:number;
-    Name:string;
-    Type: string;
-    Price: number;
-    image:string;
+    Id : number|null;
+    sellrent:number|null;
+    Name:string|null;
+    Type: string|null;
+    Price: number|null;
+    image:string|null;
 }

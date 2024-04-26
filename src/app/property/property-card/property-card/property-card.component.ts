@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./property-card.component.css']
 })
 export class PropertyCardComponent implements OnInit {
-  @Input() property:any
+  @Input() property:any;
+  @Input() hiddenIcons?:boolean;
 
   constructor() { }
 
